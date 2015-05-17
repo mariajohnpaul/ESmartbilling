@@ -1,20 +1,32 @@
 package mj.findskills.esmartbilling;
 
 import android.app.Activity;
+import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 
 public class MainActivity extends Activity {
+	
+	public static final int SIGNATURE_ACTIVITY = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        TextView tv = (TextView) findViewById(R.id.MJ);
-        tv.setText("John it is working now");
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+        Button getSignature = (Button) findViewById(R.id.signature);
+        getSignature.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, CaptureSignature.class); 
+                startActivityForResult(intent,SIGNATURE_ACTIVITY);
+            }
+        });
         		
     }
 

@@ -2,7 +2,9 @@
 <resources>
 
     <string name="app_name">ESmartBilling</string>
-    <string name="hello_world">Hello world!</string>
+    <string name="hello">Hi Please SIgn Here</string>
     <string name="action_settings">Settings</string>
+     <string name="external_dir">GetSignature</string>
+    
 
 </resources>

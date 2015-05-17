@@ -9,20 +9,21 @@
     tools:context="mj.findskills.esmartbilling.MainActivity" >
 
     <TextView
-        android:id = "@+id/MJ"
-        android:layout_width="wrap_content"
+        android:id="@+id/textView1"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="@string/hello_world" />
+        android:paddingBottom="20dp"
+        android:text="@string/hello"
+        android:textSize="25sp"
+        android:textStyle="bold" />
 
     <Button
-        android:id="@+id/button1"
+        android:id="@+id/signature"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/MJ"
-        android:layout_marginLeft="61dp"
-        android:layout_marginTop="118dp"
-        android:layout_toRightOf="@+id/MJ"
-        android:text="Button"
-        android:onClick="mjchange" />
+        android:layout_alignLeft="@+id/textView1"
+        android:layout_below="@+id/textView1"
+        android:layout_marginTop="63dp"
+        android:text="Get My Signature" />
 
 </RelativeLayout>
