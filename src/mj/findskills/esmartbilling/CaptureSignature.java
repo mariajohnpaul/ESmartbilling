@@ -15,6 +15,7 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.RectF;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore.Images;
@@ -95,6 +96,12 @@ public class CaptureSignature extends Activity {
                 if(!error){
                     mView.setDrawingCacheEnabled(true);
                     mSignature.save(mView);
+                    
+                 Intent emailIntent = new Intent(Intent.ACTION_SENDTO, Uri.fromParts(
+                            "mailto","garry@findskills.com", null));
+                emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Signed form from Esmart billing");
+                startActivity(Intent.createChooser(emailIntent, "Send email..."));
+                    
                     Bundle b = new Bundle();
                     b.putString("status", "done");
                     Intent intent = new Intent();
